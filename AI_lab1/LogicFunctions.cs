@@ -28,8 +28,5 @@
         {
             return a * weightA + b * weightB;
         }
-
-
-
     }
 }

@@ -1,39 +1,36 @@
 ﻿using System;
+using System.ComponentModel;
 
 namespace AI_lab1
 {
-    internal class Program
+    internal class Program 
     {
         static void Main(string[] args)
-        {   
-            while(true)
-            {
-                Console.WriteLine("Choose 1-and, 2-or, 3-xor, 4-not, and enter the two Boolean values as integers.");
-                int choose, a, b;
-                var numbers = Console.ReadLine().Split(' ');
-                choose = int.Parse(numbers[0]);
-                a = int.Parse(numbers[1]);
-                b = int.Parse(numbers[2]);
-                switch (choose)
-                {
-                    case 1:
-                        Console.WriteLine($"result: {LogicFunctions.AND(a, b)}");
-                        break;
+        {
+            BackPropagation.Test();
+            BackPropagation.Leanrning();
+            BackPropagation.Test();
+            BackPropagation.Test(11, 2);
 
-                    case 2:
-                        Console.WriteLine($"result: {LogicFunctions.OR(a, b)}\n");
-                        break;
-
-                    case 3:
-                        Console.WriteLine($"result: {LogicFunctions.XOR(a, b)}\n");
-                        break;
-
-                    case 4:
-                        Console.WriteLine($"result: {LogicFunctions.NOT(a)}\n");
-                        break;
-                }
-            }
-            
+            Console.WriteLine("\n\n\nLogic functions:");
+            Console.WriteLine(0 + " AND " + 0 + " = " + LogicFunctions.AND(0, 0));
+            Console.WriteLine(0 + " AND " + 1 + " = " + LogicFunctions.AND(0, 1));
+            Console.WriteLine(1 + " AND " + 0 + " = " + LogicFunctions.AND(1, 0));
+            Console.WriteLine(1 + " AND " + 1 + " = " + LogicFunctions.AND(1, 1));
+            Console.WriteLine("---------------");
+            Console.WriteLine(0 + " OR " + 0 + " = " + LogicFunctions.OR(0, 0));
+            Console.WriteLine(0 + " OR " + 1 + " = " + LogicFunctions.OR(0, 1));
+            Console.WriteLine(1 + " OR " + 0 + " = " + LogicFunctions.OR(1, 0));
+            Console.WriteLine(1 + " OR " + 1 + " = " + LogicFunctions.OR(1, 1));
+            Console.WriteLine("---------------");
+            Console.WriteLine(0 + " XOR " + 0 + " = " + LogicFunctions.XOR(0, 0));
+            Console.WriteLine(0 + " XOR " + 1 + " = " + LogicFunctions.XOR(0, 1));
+            Console.WriteLine(1 + " XOR " + 0 + " = " + LogicFunctions.XOR(1, 0));
+            Console.WriteLine(1 + " XOR " + 1 + " = " + LogicFunctions.XOR(1, 1));
+            Console.WriteLine("---------------");
+            Console.WriteLine("NOT " + 0 + " = " + LogicFunctions.NOT(0));
+            Console.WriteLine("NOT " + 1 + " = " + LogicFunctions.NOT(1));
+            Console.ReadKey();
         }
     }
 }
